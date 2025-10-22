@@ -50,7 +50,7 @@ public class OrderImgPanel extends JPanel{
 			this.add(new JLabel(orderImgs[i]));
 		}
 		
-		
+		 
 		
 		
 	}
