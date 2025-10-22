@@ -44,7 +44,7 @@ public class OrderImgPanel extends JPanel{
 		
 		this.setBackground(Color.yellow);
 		this.setLayout(new GridLayout(2,3,10,10));
-		this.setPreferredSize(new Dimension(150,150));
+		this.setPreferredSize(new Dimension(150,150)); 
 		
 		for(int i=0; i<orderImgs.length; i++) {
 			this.add(new JLabel(orderImgs[i]));
