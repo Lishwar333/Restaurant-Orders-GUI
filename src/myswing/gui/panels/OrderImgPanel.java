@@ -35,20 +35,21 @@ public class OrderImgPanel extends JPanel{
         imgBurger = scaleImage(jImages.getBURGERIMG(), 100, 100);
         imgCookies = scaleImage(jImages.getCOOKIESIMG(), 100, 100);
         imgShakes = scaleImage(jImages.getSHAKESIMG(), 100, 100);
+        
+        ImageIcon[] orderImgs = new ImageIcon[] {
+        		imgBrownies, imgFries, imgFriedChicken, imgBurger, imgCookies, imgShakes
+        };
+        
 		
 		
 		this.setBackground(Color.yellow);
 		this.setLayout(new GridLayout(2,3,10,10));
 		this.setPreferredSize(new Dimension(150,150));
 		
+		for(int i=0; i<orderImgs.length; i++) {
+			this.add(new JLabel(orderImgs[i]));
+		}
 		
-		// Add names of the food !!!
-		this.add(new JLabel(imgBrownies));
-        this.add(new JLabel(imgFries));
-        this.add(new JLabel(imgFriedChicken));
-        this.add(new JLabel(imgBurger));
-        this.add(new JLabel(imgCookies));
-        this.add(new JLabel(imgShakes));
 		
 		
 		
