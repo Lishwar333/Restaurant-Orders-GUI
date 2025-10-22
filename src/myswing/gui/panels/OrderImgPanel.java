@@ -20,7 +20,7 @@ public class OrderImgPanel extends JPanel{
 	ImageIcon imgFriedChicken;
 	ImageIcon imgBurger;
 	ImageIcon imgCookies;
-	ImageIcon imgShakes;
+	ImageIcon imgShakes; 
 	
 	JImages jImages = new JImages();
 	
