@@ -5,7 +5,9 @@ public class Application {
 
 	public static void main(String[] args) {
 		
+		//Application
 		MainFrame frame = new MainFrame();
+		
 		
 		
 	}
