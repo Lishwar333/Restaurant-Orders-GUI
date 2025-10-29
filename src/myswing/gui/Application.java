@@ -11,7 +11,9 @@ public class Application {
 		
 	SwingUtilities.invokeLater(() -> new MainFrame());
 		
-		
+	System.out.println("Git merge check");
 	}
+	
+	
 
 }
