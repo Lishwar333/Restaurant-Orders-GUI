@@ -1,4 +1,6 @@
 package myswing.gui;
+import javax.swing.SwingUtilities;
+
 import myswing.gui.frames.MainFrame;
 
 public class Application {
@@ -6,8 +8,8 @@ public class Application {
 	public static void main(String[] args) {
 		
 		//Application
-		MainFrame frame = new MainFrame();
 		
+	SwingUtilities.invokeLater(() -> new MainFrame());
 		
 		
 	}

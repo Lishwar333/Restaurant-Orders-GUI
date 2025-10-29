@@ -115,10 +115,6 @@ public class OrderImgPanel extends JPanel{
 		activeTimer.setRepeats(false);
 		activeTimer.start();
 	    };
-
-		
-		
-		
 	
 	
 	 // Helper method to scale image
