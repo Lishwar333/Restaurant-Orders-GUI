@@ -9,11 +9,33 @@ public class JImages {
 	String FRIEDCHICKENIMG = "C:\\Users\\jayak\\eclipse-workspace\\Restaurant-Orders-GUI\\src\\myswing\\gui\\myresource\\menus\\FriedChicken.jpg";
 	String BROWNIESIMG = "C:\\Users\\jayak\\eclipse-workspace\\Restaurant-Orders-GUI\\src\\myswing\\gui\\myresource\\menus\\Brownies.jpg";
 	
+	String LAUNDRYFRONT = "C:\\Users\\jayak\\eclipse-workspace\\Restaurant-Orders-GUI\\src\\myswing\\gui\\myresource\\laundry\\laundryfront.png";
+	String LAUNDRYINTERIOR = "C:\\Users\\jayak\\eclipse-workspace\\Restaurant-Orders-GUI\\src\\myswing\\gui\\myresource\\laundry\\Laundryinterior.png";
+	String LAUNDRYLOGO = "C:\\Users\\jayak\\eclipse-workspace\\Restaurant-Orders-GUI\\src\\myswing\\gui\\myresource\\laundry\\laundrylogo.png";
+	
 	public String getBURGERIMG() {
 		return BURGERIMG;
 	}
 	public void setBURGERIMG(String bURGERIMG) {
 		BURGERIMG = bURGERIMG;
+	}
+	public String getLAUNDRYFRONT() {
+		return LAUNDRYFRONT;
+	}
+	public void setLAUNDRYFRONT(String lAUNDRYFRONT) {
+		LAUNDRYFRONT = lAUNDRYFRONT;
+	}
+	public String getLAUNDRYINTERIOR() {
+		return LAUNDRYINTERIOR;
+	}
+	public void setLAUNDRYINTERIOR(String lAUNDRYINTERIOR) {
+		LAUNDRYINTERIOR = lAUNDRYINTERIOR;
+	}
+	public String getLAUNDRYLOGO() {
+		return LAUNDRYLOGO;
+	}
+	public void setLAUNDRYLOGO(String lAUNDRYLOGO) {
+		LAUNDRYLOGO = lAUNDRYLOGO;
 	}
 	public String getFRIESIMG() {
 		return FRIESIMG;
