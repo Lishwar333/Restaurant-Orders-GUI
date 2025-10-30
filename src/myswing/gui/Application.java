@@ -9,14 +9,12 @@ public class Application {
 	public static void main(String[] args) {
 		
 		//Applications
-		MainFrame frame = new MainFrame();
-		
-		JImages jimg = new JImages();
+	
+	JImages jimg = new JImages();
 		
 	SwingUtilities.invokeLater(() -> new MainFrame());
 		
 	System.out.println("Git merge check");
-	
 	System.out.println("Front path: " + jimg.getLAUNDRYFRONT());
 	System.out.println("Logo path: " + jimg.getLAUNDRYLOGO());
 	System.out.println("Interior path: " + jimg.getLAUNDRYINTERIOR());
