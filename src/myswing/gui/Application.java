@@ -8,7 +8,8 @@ public class Application {
 
 	public static void main(String[] args) {
 		
-		//Application
+		//Applications
+		MainFrame frame = new MainFrame();
 		
 		JImages jimg = new JImages();
 		
