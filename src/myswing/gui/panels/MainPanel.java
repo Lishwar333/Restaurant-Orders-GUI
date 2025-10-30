@@ -12,6 +12,7 @@ import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 
 import myswing.gui.buttons.OrderButton;
 import myswing.gui.labels.HomeLabel;
@@ -21,21 +22,27 @@ public class MainPanel extends JPanel{
 	HomeLabel homeLabel;
 	
 	OrderPanel btnPanel; 
-	AdvertisementMainPanel AdPanel;
+	AdvertisementMainPanel adPanel;
 	
 	
 	public MainPanel() {
 		
 		homeLabel = new HomeLabel();
-		AdPanel = new AdvertisementMainPanel();
+		adPanel = new AdvertisementMainPanel();
 		btnPanel = new OrderPanel(homeLabel);
 				
 		this.setBackground(Color.yellow);
 		this.setLayout(new BorderLayout(10,10));
 		this.add(homeLabel, BorderLayout.NORTH);
 		this.add(btnPanel, BorderLayout.CENTER);
-		this.add(AdPanel, BorderLayout.SOUTH); 
+		this.add(adPanel, BorderLayout.SOUTH); 
 		//this.add(errorLabel, BorderLayout.SOUTH);
+		
+		Timer timer = new Timer(5000, e -> {this.remove(adPanel);
+											this.revalidate();
+											this.repaint(); });
+		timer.start();
+		
 		
 	}
 	
