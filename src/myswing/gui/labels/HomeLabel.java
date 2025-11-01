@@ -28,7 +28,7 @@ public class HomeLabel extends JLabel {
 		this.setIcon(img);
 		this.setForeground(Color.red);
 		//this.setPreferredSize(new Dimension(400, 100));
-		this.setFont(new Font("Showcard Gothic", Font.PLAIN, 22));
+		this.setFont(new Font("Showcard Gothic", Font.PLAIN, 18));
 		this.setHorizontalTextPosition(JLabel.CENTER);
 		this.setVerticalTextPosition(JLabel.BOTTOM);
 		//this.setText("Nooooo");

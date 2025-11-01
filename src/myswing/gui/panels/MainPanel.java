@@ -13,10 +13,8 @@ import myswing.gui.labels.HomeLabel;
 public class MainPanel extends JPanel{
 	
 	HomeLabel homeLabel;
-	
 	OrderPanel btnPanel; 
 	AdvertisementMainPanel adPanel;
-	
 	
 	public MainPanel() {
 		
@@ -29,6 +27,7 @@ public class MainPanel extends JPanel{
 		this.add(homeLabel, BorderLayout.NORTH);
 		this.add(btnPanel, BorderLayout.CENTER);
 		this.add(adPanel, BorderLayout.SOUTH); 
+		
 		//this.add(errorLabel, BorderLayout.SOUTH);
 		
 		//Timer timer = new Timer(5000, e -> {this.remove(adPanel);

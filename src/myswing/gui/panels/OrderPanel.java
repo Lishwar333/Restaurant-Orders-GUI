@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -17,6 +18,7 @@ import myswing.gui.buttons.OrderButton;
 import myswing.gui.constants.JConstants;
 import myswing.gui.labels.ErrorLabel;
 import myswing.gui.labels.HomeLabel;
+import myswing.gui.textfields.MyNameTextField;
 
 public class OrderPanel extends JPanel{
 	
@@ -27,6 +29,7 @@ public class OrderPanel extends JPanel{
 	HomeLabel homeLabel;
 	JConstants jConstants = new JConstants();
 	OrderImgPanel orderImgPanel;
+	MyNameTextField myNameTF = new MyNameTextField();
 	
 	public OrderPanel(HomeLabel homeLabel){
 		
@@ -37,9 +40,14 @@ public class OrderPanel extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				
-				OrderBtnfn();
-				
+				if(myNameTF.getText().trim().isEmpty()) {
+					
+					JOptionPane.showMessageDialog(OrderPanel.this, "Please enter the name to continue!", "Error", JOptionPane.ERROR_MESSAGE);
+				}else {
+					
+					OrderBtnfn();
+				}
+
 			}
 			
 		});
@@ -49,8 +57,11 @@ public class OrderPanel extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
+				if(JOptionPane.showConfirmDialog(OrderPanel.this, "Are you sure going back??", "Confirmation", JOptionPane.YES_NO_OPTION)==0) {
+					
+					BackBtnfn();
+				}
 				
-				BackBtnfn();
 			}
 			
 		});
@@ -61,8 +72,10 @@ public class OrderPanel extends JPanel{
 		
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		this.setBackground(Color.yellow);
+		this.add(myNameTF);
+		this.add(Box.createRigidArea(new Dimension(0, 20))); // small gap
 		this.add(btn);
-		this.setBorder(new EmptyBorder(20, 0, 0, 0)); 
+		this.setBorder(new EmptyBorder(20, 0, 20, 0)); 
 		//this.add(Box.createRigidArea(new Dimension(0, 60))); // small gap
 		//this.add(errorLabel);
 		
@@ -71,7 +84,7 @@ public class OrderPanel extends JPanel{
 	public void OrderBtnfn() {
 		
 		//errorFn(); // in care of maintenance
-		homeLabel.setText(jConstants.getORDERS_PAGE_HEADING());
+		homeLabel.setText(jConstants.getORDERS_PAGE_HEADING() + " "+ myNameTF.getText()+"!");
 		this.removeAll();
 		this.add(orderImgPanel);
 		this.add(backButton);
@@ -84,6 +97,8 @@ public class OrderPanel extends JPanel{
 		//this.remove(backButton);
 		//this.remove(errorLabel);
 		this.removeAll();
+		this.add(myNameTF);
+		this.add(Box.createRigidArea(new Dimension(0, 20))); // small gap
 		this.add(btn);
 		homeLabel.setText(jConstants.getHOME_WELCOME_LABEL());
 		this.revalidate();

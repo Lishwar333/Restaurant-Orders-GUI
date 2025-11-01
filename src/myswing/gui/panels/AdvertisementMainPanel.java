@@ -47,7 +47,7 @@ public class AdvertisementMainPanel extends JPanel implements ActionListener {
         this.setLayout(null);
         this.setOpaque(true);
         this.setBackground(Color.RED);
-        this.setPreferredSize(new Dimension(600, 250)); // 🔹 smaller height
+        this.setPreferredSize(new Dimension(600, 230)); // 🔹 smaller height
 
         // === Title text ===
         adTextLabel.setText(jConstants.getAD_MAIN_PANEL_TITLE());
