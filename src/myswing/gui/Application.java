@@ -8,9 +8,9 @@ public class Application {
 
 	public static void main(String[] args) {
 		
-		//Application
-		
-		JImages jimg = new JImages();
+		//Applications
+	
+	JImages jimg = new JImages();
 		
 	SwingUtilities.invokeLater(() -> new MainFrame());
 		
