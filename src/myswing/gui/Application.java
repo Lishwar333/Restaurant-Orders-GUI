@@ -14,14 +14,9 @@ public class Application {
 		
 	SwingUtilities.invokeLater(() -> new MainFrame());
 		
-	System.out.println("Git merge check");
-	System.out.println("Front path: " + jimg.getLAUNDRYFRONT());
-	System.out.println("Logo path: " + jimg.getLAUNDRYLOGO());
-	System.out.println("Interior path: " + jimg.getLAUNDRYINTERIOR());
+	System.out.println("Application running...");
 	
 
 	}
 	
-	
-
 }
