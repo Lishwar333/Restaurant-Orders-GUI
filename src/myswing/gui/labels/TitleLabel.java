@@ -1,30 +1,28 @@
 package myswing.gui.labels;
 
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
-
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-import myswing.gui.constants.JConstants;
+import myswing.gui.constants.JImages;
 
-public class HomeLabel extends JLabel {
+public class TitleLabel extends JLabel {
 	
 	ImageIcon img;
-	JConstants jConstants = new JConstants();
+	JImages jImage = new JImages();
+
 	
-	public HomeLabel() {
+	public TitleLabel() {
 		
-		img = new ImageIcon("C:\\\\Users\\\\jayak\\\\eclipse-workspace\\\\Restaurant-Orders-GUI\\\\src\\\\myswing\\\\gui\\\\myresource\\\\los_pollos_logo.jpg");
+		img = new ImageIcon(jImage.getPOLOS_HERMANOS_LOGO());
 				 
         Image image = img.getImage();
         Image scaled = image.getScaledInstance(100, 100, Image.SCALE_SMOOTH); // width=100, height=100
         img = new ImageIcon(scaled);
         
 		
-		this.setText(jConstants.getHOME_WELCOME_LABEL());
 		this.setIcon(img);
 		this.setForeground(Color.red);
 		//this.setPreferredSize(new Dimension(400, 100));
@@ -34,6 +32,7 @@ public class HomeLabel extends JLabel {
 		//this.setText("Nooooo");
 		
 		this.setHorizontalAlignment(JLabel.CENTER);
+		this.setAlignmentX(JLabel.CENTER);
 		this.setVerticalAlignment(JLabel.CENTER);
 	}
 

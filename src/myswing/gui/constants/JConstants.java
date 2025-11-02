@@ -1,7 +1,7 @@
 package myswing.gui.constants;
 
 public class JConstants {
-	
+
 	String HOME_WELCOME_LABEL = "<html><div style='text-align:center;'>Welcome to Los Pollos Hermanos!<br>Enter your name, then tap the button below to choose your order!</div></html>";
 	String ORDERS_PAGE_HEADING = "Please select your orders";		
 	String AD_MAIN_PANEL_TITLE = "<html><div style='text-align:center;'>Advertisement!<br>Lavandería Brillante — Donde la Ropa Brilla Como Nueva</div></html>";
@@ -18,6 +18,15 @@ public class JConstants {
 		    + "<p><a href='https://breakingbad.fandom.com/wiki/Lavander%C3%ADa_Brillante'>"
 		    + "Más información sobre Lavandería Brillante</a></p>"
 		    + "</div></html>";
+	String PAYMENT_TITLE = "You are in Payment Page!";
+	
+	public String getPAYMENT_TITLE() {
+		return PAYMENT_TITLE;
+	}
+
+	public void setPAYMENT_TITLE(String pAYMENT_TITLE) {
+		PAYMENT_TITLE = pAYMENT_TITLE;
+	}
 
 	public String getADV_CONTENT() {
 		return ADV_CONTENT;

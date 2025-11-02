@@ -1,24 +1,20 @@
 package myswing.gui.panels;
 
+import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.Dimension;
+import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-
 import myswing.gui.buttons.BackButton;
 import myswing.gui.buttons.OrderButton;
 import myswing.gui.constants.JConstants;
 import myswing.gui.labels.ErrorLabel;
-import myswing.gui.labels.HomeLabel;
-import myswing.gui.textfields.MyNameTextField;
+import myswing.gui.labels.TitleLabel;
+
 
 public class OrderPanel extends JPanel{
 	
@@ -26,31 +22,21 @@ public class OrderPanel extends JPanel{
 	OrderButton btn;
 	ErrorLabel errorLabel;
 	BackButton backButton;
-	HomeLabel homeLabel;
+	TitleLabel homeLabel;
 	JConstants jConstants = new JConstants();
 	OrderImgPanel orderImgPanel;
-	MyNameTextField myNameTF = new MyNameTextField();
+	TitleLabel orderTitleLabel = new TitleLabel();
+	CardLayout cards;
+	MainPanel mainPanel;
 	
-	public OrderPanel(HomeLabel homeLabel){
+	
+	public OrderPanel(MainPanel mainPanel, CardLayout cards){
 		
-		this.homeLabel = homeLabel;
+		this.cards = cards;
+		this.mainPanel = mainPanel;
 		
-		btn = new OrderButton(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				
-				if(myNameTF.getText().trim().isEmpty()) {
-					
-					JOptionPane.showMessageDialog(OrderPanel.this, "Please enter the name to continue!", "Error", JOptionPane.ERROR_MESSAGE);
-				}else {
-					
-					OrderBtnfn();
-				}
-
-			}
-			
-		});
+		orderTitleLabel.setText(jConstants.getHOME_WELCOME_LABEL());
+		orderTitleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
 		backButton = new BackButton(new ActionListener() {
 
@@ -72,53 +58,20 @@ public class OrderPanel extends JPanel{
 		
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		this.setBackground(Color.yellow);
-		this.add(myNameTF);
-		this.add(Box.createRigidArea(new Dimension(0, 20))); // small gap
-		this.add(btn);
-		this.setBorder(new EmptyBorder(20, 0, 20, 0)); 
-		//this.add(Box.createRigidArea(new Dimension(0, 60))); // small gap
-		//this.add(errorLabel);
 		
-	}
-	
-	public void OrderBtnfn() {
-		
-		//errorFn(); // in care of maintenance
-		homeLabel.setText(jConstants.getORDERS_PAGE_HEADING() + " "+ myNameTF.getText()+"!");
-		this.removeAll();
+		this.add(orderTitleLabel);
 		this.add(orderImgPanel);
 		this.add(backButton);
-		this.revalidate();
-		this.repaint(); // Removes the order button and adds the back button
+		
 		
 	}
+	
 	
 	public void BackBtnfn() {
-		//this.remove(backButton);
-		//this.remove(errorLabel);
-		this.removeAll();
-		this.add(myNameTF);
-		this.add(Box.createRigidArea(new Dimension(0, 20))); // small gap
-		this.add(btn);
-		homeLabel.setText(jConstants.getHOME_WELCOME_LABEL());
-		this.revalidate();
-		this.repaint();
+		
+		cards.show(mainPanel, "Home");
 		
 	}
-	
-	public void errorFn() {
-		
-		errorLabel.setText("Sorry, maintenance break. Try again Later");
-		errorLabel.setFont(new Font("Showcard Gothic", Font.PLAIN, 22));
-		this.removeAll();
-		this.add(errorLabel);
-		this.add(backButton);
-		this.revalidate();
-		this.repaint();
-		
-		
-	}
-	
 	
 	
 

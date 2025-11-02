@@ -1,10 +1,8 @@
 package myswing.gui.checkbox;
 
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.ItemListener;
-
 import javax.swing.JCheckBox;
 
 public class OrderCheckBox extends JCheckBox{
