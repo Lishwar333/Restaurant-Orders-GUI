@@ -1,23 +1,20 @@
 package myswing.gui.frames;
 
+import java.awt.CardLayout;
 import java.awt.Color;
-
-
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-
-import myswing.gui.labels.HomeLabel;
 import myswing.gui.panels.MainPanel;
 
 public class MainFrame extends JFrame {
 	
+	MainPanel mainPanel;
 	ImageIcon img;
-	MainPanel panel;
 	
 	public MainFrame(){
 		
-		panel = new MainPanel();
-		
+		CardLayout cards = new CardLayout();
+		mainPanel = new MainPanel(cards);
 		
 		img = new ImageIcon("C:\\Users\\jayak\\eclipse-workspace\\Restaurant-Orders-GUI\\src\\myswing\\gui\\myresource\\los_pollos_logo.jpg");
 		
@@ -28,11 +25,9 @@ public class MainFrame extends JFrame {
 		this.setIconImage(img.getImage());
 		this.getContentPane().setBackground(Color.YELLOW);
 		this.setLocationRelativeTo(null);
-		this.add(panel);
+		this.add(mainPanel);
 		this.setResizable(false);
 		//this.pack();
-		
-		
 		
 		
 		this.setVisible(true);

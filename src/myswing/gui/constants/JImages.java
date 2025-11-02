@@ -2,6 +2,14 @@ package myswing.gui.constants;
 
 public class JImages {
 	
+	public String getPOLOS_HERMANOS_LOGO() {
+		return POLOS_HERMANOS_LOGO;
+	}
+	public void setPOLOS_HERMANOS_LOGO(String pOLOS_HERMANOS_LOGO) {
+		POLOS_HERMANOS_LOGO = pOLOS_HERMANOS_LOGO;
+	}
+	String POLOS_HERMANOS_LOGO = "C:\\\\Users\\\\jayak\\\\eclipse-workspace\\\\Restaurant-Orders-GUI\\\\src\\\\myswing\\\\gui\\\\myresource\\\\los_pollos_logo.jpg";
+	
 	String BURGERIMG = "C:\\Users\\jayak\\eclipse-workspace\\Restaurant-Orders-GUI\\src\\myswing\\gui\\myresource\\menus\\Burger.jpg";
 	String FRIESIMG = "C:\\Users\\jayak\\eclipse-workspace\\Restaurant-Orders-GUI\\src\\myswing\\gui\\myresource\\menus\\FrenchFries.jpg";
 	String SHAKESIMG = "C:\\Users\\jayak\\eclipse-workspace\\Restaurant-Orders-GUI\\src\\myswing\\gui\\myresource\\menus\\StrawberryMilkShake.jpg";
