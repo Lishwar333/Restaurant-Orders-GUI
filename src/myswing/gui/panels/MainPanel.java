@@ -25,7 +25,7 @@ public class MainPanel extends JPanel {
 		this.add(homePanel, "Home");
 		this.add(orderPanel, "Orders");
 		this.add(errorPanel, "Error");
-		this.add(paymentPanel);
+		this.add(paymentPanel, "Payment");
 		
 		
 	}

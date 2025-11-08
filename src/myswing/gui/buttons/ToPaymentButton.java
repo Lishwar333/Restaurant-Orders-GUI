@@ -8,18 +8,19 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
-public class BackButton extends JButton{
+public class ToPaymentButton extends JButton{
 	
-	public BackButton(ActionListener actionListener) {
+	public ToPaymentButton(ActionListener actionListerner) {
 		
-		this.setText("Back");
-		this.setFocusable(false);
+		this.setText("To Payment");
 		this.setBackground(Color.red);
 		this.setForeground(Color.yellow);
-		this.setFont(new Font("Showcard Gothic", Font.PLAIN, 15));
+		this.setFocusable(false);
 		this.setPreferredSize(new Dimension(200, 40));
 		this.setAlignmentX(Component.CENTER_ALIGNMENT);
-		this.addActionListener(actionListener);
+		this.setFont(new Font("Showcard Gothic", Font.PLAIN, 15));
+		this.addActionListener(actionListerner);
+		
 	}
 
 }

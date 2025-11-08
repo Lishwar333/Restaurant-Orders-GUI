@@ -3,9 +3,12 @@ package myswing.gui.panels;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -51,6 +54,7 @@ public class HomePanel extends JPanel{
 					JOptionPane.showMessageDialog(HomePanel.this, "Please enter the name to continue!", "Error", JOptionPane.ERROR_MESSAGE);
 				}else {
 					
+					mainPanel.orderPanel.setMY_NAME_TF(myNameTF.getText()); // With card layout, it gives an opportunity to set values/ objects like constructors
 					cards.show(mainPanel,"Orders");
 					//errorFn();
 				}
@@ -62,6 +66,7 @@ public class HomePanel extends JPanel{
 		homeCenterPanel.setLayout(new BoxLayout(homeCenterPanel, BoxLayout.Y_AXIS));
 		homeCenterPanel.setBackground(Color.yellow);
 		homeCenterPanel.add(myNameTF);
+		homeCenterPanel.add(Box.createRigidArea(new Dimension(0, 5))); 
 		homeCenterPanel.add(btn);
 		
 				

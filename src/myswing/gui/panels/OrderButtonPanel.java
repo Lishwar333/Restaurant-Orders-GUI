@@ -1,0 +1,83 @@
+package myswing.gui.panels;
+
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
+import myswing.gui.buttons.BackButton;
+import myswing.gui.buttons.ToPaymentButton;
+
+public class OrderButtonPanel extends JPanel {
+	
+	BackButton backButton;
+	ToPaymentButton toPaymentButton;
+	MainPanel mainPanel;
+	CardLayout cards;
+	
+	public OrderButtonPanel(MainPanel mainPanel, CardLayout cards, OrderPanel orderPanel) {
+		
+		this.setBackground(Color.yellow);
+		this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
+		this.setPreferredSize(new Dimension(450, 50));
+		
+		this.mainPanel = mainPanel;
+		this.cards = cards;
+		
+		backButton = new BackButton(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				if(JOptionPane.showConfirmDialog(orderPanel, "Are you sure going back??", "Confirmation", JOptionPane.YES_NO_OPTION)==0) {
+					
+					backBtnfn();
+				}
+				
+			}
+			
+		});
+		
+		this.add(backButton);
+		
+		toPaymentButton = new ToPaymentButton(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				if(JOptionPane.showConfirmDialog(orderPanel, "Ready for payment??", "Confirmation", JOptionPane.YES_NO_OPTION)==0) {
+					
+					toPaymentfn();
+				}
+				
+				
+			}
+			
+		});
+		
+		this.add(backButton);
+		this.add(Box.createRigidArea(new Dimension(10, 0))); // 20px horizontal
+		this.add(toPaymentButton);
+		
+		
+	}
+	
+	public void backBtnfn() {
+		
+		cards.show(mainPanel, "Home");
+		
+	}
+	
+	public void toPaymentfn() {
+		
+		cards.show(mainPanel, "Payment");
+		
+	}
+
+}

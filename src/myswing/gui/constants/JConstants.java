@@ -20,6 +20,7 @@ public class JConstants {
 		    + "</div></html>";
 	String PAYMENT_TITLE = "You are in Payment Page!";
 	
+
 	public String getPAYMENT_TITLE() {
 		return PAYMENT_TITLE;
 	}
