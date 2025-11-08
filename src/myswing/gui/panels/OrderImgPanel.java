@@ -82,10 +82,12 @@ public class OrderImgPanel extends JPanel{
 					if(cb.isSelected()) {
 						
 						orderMap.put(cb.getText(), true);
+						cb.setBackground(Color.cyan);
 						
 					}
 					else {
 						orderMap.remove(cb.getText());
+						cb.setBackground(null);
 					}
 					
 					System.out.println("Selected: " + orderMap.keySet());
