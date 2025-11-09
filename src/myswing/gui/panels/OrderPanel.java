@@ -7,6 +7,8 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -33,16 +35,15 @@ public class OrderPanel extends JPanel{
 	OrderButtonPanel orderButtonPanel;
 	String MY_NAME_TF;
 
-
 	public OrderPanel(MainPanel mainPanel, CardLayout cards){
 		
 		this.cards = cards;
 		this.mainPanel = mainPanel;
 		
-				orderTitleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+		orderTitleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
 		errorLabel = new ErrorLabel();
-		orderImgPanel = new OrderImgPanel();
+		orderImgPanel = new OrderImgPanel(mainPanel, cards);
 		orderButtonPanel = new OrderButtonPanel(mainPanel, cards, this);
 		
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
@@ -59,7 +60,6 @@ public class OrderPanel extends JPanel{
 	public String getMY_NAME_TF() {
 		return MY_NAME_TF;
 	}
-
 
 	public void setMY_NAME_TF(String mY_NAME_TF) {
 		this.MY_NAME_TF = mY_NAME_TF;

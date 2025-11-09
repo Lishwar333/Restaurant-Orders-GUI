@@ -1,5 +1,7 @@
 package myswing.gui.constants;
 
+import java.util.Map;
+
 public class JConstants {
 
 	String HOME_WELCOME_LABEL = "<html><div style='text-align:center;'>Welcome to Los Pollos Hermanos!<br>Enter your name, then tap the button below to choose your order!</div></html>";
@@ -19,7 +21,16 @@ public class JConstants {
 		    + "Más información sobre Lavandería Brillante</a></p>"
 		    + "</div></html>";
 	String PAYMENT_TITLE = "You are in Payment Page!";
+	Map<String, Boolean> orderList;
 	
+
+	public Map<String, Boolean> getOrderList() {
+		return orderList;
+	}
+
+	public void setOrderList(Map<String, Boolean> orderList) {
+		this.orderList = orderList;
+	}
 
 	public String getPAYMENT_TITLE() {
 		return PAYMENT_TITLE;
