@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 
 import myswing.gui.buttons.BackButton;
 import myswing.gui.buttons.ToPaymentButton;
+import myswing.gui.constants.JConstants;
 
 public class OrderButtonPanel extends JPanel {
 	
@@ -22,8 +23,9 @@ public class OrderButtonPanel extends JPanel {
 	ToPaymentButton toPaymentButton;
 	MainPanel mainPanel;
 	CardLayout cards;
+	JConstants jConstants;
 	
-	public OrderButtonPanel(MainPanel mainPanel, CardLayout cards, OrderPanel orderPanel) {
+	public OrderButtonPanel(MainPanel mainPanel, CardLayout cards, OrderPanel orderPanel, JConstants jConstants) {
 		
 		this.setBackground(Color.yellow);
 		this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
@@ -31,7 +33,7 @@ public class OrderButtonPanel extends JPanel {
 		
 		this.mainPanel = mainPanel;
 		this.cards = cards;
-		
+				
 		backButton = new BackButton(new ActionListener() {
 
 			@Override
@@ -53,7 +55,14 @@ public class OrderButtonPanel extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				if(JOptionPane.showConfirmDialog(orderPanel, "Ready for payment??", "Confirmation", JOptionPane.YES_NO_OPTION)==0) {
+				OrderButtonPanel.this.jConstants = jConstants;
+				
+				if(jConstants.getOrderList()==null || jConstants.getOrderList().isEmpty()) {
+					
+					JOptionPane.showMessageDialog(mainPanel.orderPanel, "Please select an order to continue!", "Error", JOptionPane.ERROR_MESSAGE);
+				}
+				
+				else if(JOptionPane.showConfirmDialog(orderPanel, "Ready for payment??", "Confirmation", JOptionPane.YES_NO_OPTION)==0) {
 					
 					toPaymentfn();
 				}

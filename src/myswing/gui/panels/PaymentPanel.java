@@ -14,23 +14,22 @@ import myswing.gui.labels.TitleLabel;
 public class PaymentPanel extends JPanel{
 	
 	TitleLabel paymentTitle = new TitleLabel();
-	JConstants jConstants = new JConstants();
+	JConstants jConstants;
 	PaymentOrderListPanel paymentOrderListPanel;
 	Map<String, Boolean> orderList = new HashMap<>();
 
-	public PaymentPanel(MainPanel mainPanel, CardLayout cards) {
+	public PaymentPanel(MainPanel mainPanel, CardLayout cards, JConstants jConstants) {
 		
 		this.setBackground(Color.yellow);
 		this.setLayout(new BorderLayout());
+		this.jConstants = jConstants;
 		
 		paymentTitle.setText(jConstants.getPAYMENT_TITLE());
 		
-		paymentOrderListPanel = new PaymentOrderListPanel();
+		paymentOrderListPanel = new PaymentOrderListPanel(jConstants);
 		
 		this.add(paymentTitle, BorderLayout.NORTH);
 		this.add(paymentOrderListPanel, BorderLayout.WEST);
-		
-		
 		
 	}
 	

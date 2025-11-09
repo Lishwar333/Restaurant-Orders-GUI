@@ -46,14 +46,14 @@ public class OrderImgPanel extends JPanel{
 	Map<String, Boolean> orderMap = new HashMap<>();
 	
 	OrderCheckBox cb1;
-	JConstants jConstants = new JConstants();
+	JConstants jConstants;
 	
-	public OrderImgPanel(MainPanel mainPanel, CardLayout cards) {
+	public OrderImgPanel(MainPanel mainPanel, CardLayout cards, JConstants jConstants) {
 		
 		// Load and scale all images to a smaller size (e.g., 100x100)
 		//imgBrownies = new ImageIcon(jImages.getBROWNIESIMG());
 		
-		
+		this.jConstants = jConstants;
 		
         imgBrownies = scaleImage(jImages.getBROWNIESIMG(), 100, 100);
         imgFries = scaleImage(jImages.getFRIESIMG(), 100, 100);
@@ -94,8 +94,8 @@ public class OrderImgPanel extends JPanel{
 					}
 					
 					System.out.println("Selected: " + orderMap.keySet());
-					jConstants.setOrderList(orderMap);
-					mainPanel.paymentPanel.paymentOrderListPanel.setjConstants(jConstants);
+					OrderImgPanel.this.jConstants.setOrderList(orderMap);
+					mainPanel.paymentPanel.paymentOrderListPanel.setUp();					
 					
 					
 				}

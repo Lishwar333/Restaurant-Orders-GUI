@@ -19,27 +19,20 @@ public class PaymentOrderListPanel extends JPanel {
 	Map<String, Boolean> orderList = new HashMap<>();
 	JConstants jConstants;
 	
-	public PaymentOrderListPanel() {
-		
-		//resetPaymentOrderListPanel();
-		
-		
-		
-		
-		
-	}
-
-	public JConstants getjConstants() {
-		return jConstants;
-	}
-
-	public void setjConstants(JConstants jConstants) {
+	public PaymentOrderListPanel( JConstants jConstants) {
 		
 		this.jConstants = jConstants;
+		
+		
+	}
+	
+	public void setUp() {
+		
 		this.orderList = jConstants.getOrderList();
 		System.out.println("Inside resetPaymentOrderListPanel() "+ orderList.keySet());
 		resetPaymentOrderListPanel();
 	}
+
 	
 	public void resetPaymentOrderListPanel() { // Rebuilding everytime the info changes.
 		

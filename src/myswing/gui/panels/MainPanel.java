@@ -5,20 +5,23 @@ import java.awt.Color;
 
 import javax.swing.JPanel;
 
+import myswing.gui.constants.JConstants;
+
 public class MainPanel extends JPanel {
 	
 	HomePanel homePanel;
 	OrderPanel orderPanel;
 	ErrorPanel errorPanel;
 	PaymentPanel paymentPanel;
+	JConstants jConstants = new JConstants(); // one shared instance
 	
 	
 	public MainPanel(CardLayout cards) {
 		
-		homePanel = new HomePanel(this, cards);
-		orderPanel = new OrderPanel(this, cards);
+		homePanel = new HomePanel(this, cards, jConstants);
+		orderPanel = new OrderPanel(this, cards, jConstants);
 		errorPanel = new ErrorPanel();
-		paymentPanel = new PaymentPanel(this, cards);
+		paymentPanel = new PaymentPanel(this, cards, jConstants);
 		
 		this.setLayout(cards);
 		this.setBackground(Color.yellow);

@@ -27,7 +27,7 @@ public class OrderPanel extends JPanel{
 	ErrorLabel errorLabel;
 	
 	TitleLabel homeLabel;
-	JConstants jConstants = new JConstants();
+	JConstants jConstants;
 	OrderImgPanel orderImgPanel;
 	TitleLabel orderTitleLabel = new TitleLabel();
 	CardLayout cards;
@@ -35,16 +35,17 @@ public class OrderPanel extends JPanel{
 	OrderButtonPanel orderButtonPanel;
 	String MY_NAME_TF;
 
-	public OrderPanel(MainPanel mainPanel, CardLayout cards){
+	public OrderPanel(MainPanel mainPanel, CardLayout cards, JConstants jConstants){
 		
 		this.cards = cards;
 		this.mainPanel = mainPanel;
+		this.jConstants = jConstants;
 		
 		orderTitleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
 		errorLabel = new ErrorLabel();
-		orderImgPanel = new OrderImgPanel(mainPanel, cards);
-		orderButtonPanel = new OrderButtonPanel(mainPanel, cards, this);
+		orderImgPanel = new OrderImgPanel(mainPanel, cards, this.jConstants);
+		orderButtonPanel = new OrderButtonPanel(mainPanel, cards, this, this.jConstants);
 		
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		this.setBackground(Color.yellow);
@@ -53,7 +54,6 @@ public class OrderPanel extends JPanel{
 		this.add(orderImgPanel);
 		this.add(Box.createRigidArea(new Dimension(0, 5))); 
 		this.add(orderButtonPanel);
-		
 		
 	}
 	
