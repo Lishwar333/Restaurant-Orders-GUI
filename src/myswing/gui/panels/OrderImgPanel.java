@@ -1,6 +1,7 @@
 package myswing.gui.panels;
 
 import java.awt.BorderLayout;
+import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -22,6 +23,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 
 import myswing.gui.checkbox.OrderCheckBox;
+import myswing.gui.constants.JConstants;
 import myswing.gui.constants.JImages;
 
 /* This panel is within the OrderPanel, which in turn is within the MainPanel*/
@@ -44,8 +46,9 @@ public class OrderImgPanel extends JPanel{
 	Map<String, Boolean> orderMap = new HashMap<>();
 	
 	OrderCheckBox cb1;
+	JConstants jConstants = new JConstants();
 	
-	public OrderImgPanel() {
+	public OrderImgPanel(MainPanel mainPanel, CardLayout cards) {
 		
 		// Load and scale all images to a smaller size (e.g., 100x100)
 		//imgBrownies = new ImageIcon(jImages.getBROWNIESIMG());
@@ -91,7 +94,13 @@ public class OrderImgPanel extends JPanel{
 					}
 					
 					System.out.println("Selected: " + orderMap.keySet());
+					jConstants.setOrderList(orderMap);
+					mainPanel.paymentPanel.paymentOrderListPanel.setjConstants(jConstants);
+					
+					
 				}
+				
+				
 				
 			});
 			cb1.setIcon(orderImgs[i]);
@@ -109,5 +118,7 @@ public class OrderImgPanel extends JPanel{
         Image scaledImage = icon.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
         return new ImageIcon(scaledImage);
     }
+    
+    
 
 }

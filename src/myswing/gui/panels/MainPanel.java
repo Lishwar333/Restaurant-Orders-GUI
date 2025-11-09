@@ -18,7 +18,7 @@ public class MainPanel extends JPanel {
 		homePanel = new HomePanel(this, cards);
 		orderPanel = new OrderPanel(this, cards);
 		errorPanel = new ErrorPanel();
-		paymentPanel = new PaymentPanel();
+		paymentPanel = new PaymentPanel(this, cards);
 		
 		this.setLayout(cards);
 		this.setBackground(Color.yellow);

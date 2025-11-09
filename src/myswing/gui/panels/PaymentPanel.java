@@ -1,7 +1,10 @@
 package myswing.gui.panels;
 
 import java.awt.BorderLayout;
+import java.awt.CardLayout;
 import java.awt.Color;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.JPanel;
 
@@ -12,17 +15,31 @@ public class PaymentPanel extends JPanel{
 	
 	TitleLabel paymentTitle = new TitleLabel();
 	JConstants jConstants = new JConstants();
-	
-	public PaymentPanel() {
+	PaymentOrderListPanel paymentOrderListPanel;
+	Map<String, Boolean> orderList = new HashMap<>();
+
+	public PaymentPanel(MainPanel mainPanel, CardLayout cards) {
 		
 		this.setBackground(Color.yellow);
 		this.setLayout(new BorderLayout());
 		
 		paymentTitle.setText(jConstants.getPAYMENT_TITLE());
 		
-		this.add(paymentTitle);
+		paymentOrderListPanel = new PaymentOrderListPanel();
+		
+		this.add(paymentTitle, BorderLayout.NORTH);
+		this.add(paymentOrderListPanel, BorderLayout.WEST);
 		
 		
+		
+	}
+	
+	public Map<String, Boolean> getOrderList() {
+		return orderList;
+	}
+
+	public void setOrderList(Map<String, Boolean> orderList) {
+		this.orderList = orderList;
 	}
 
 }
