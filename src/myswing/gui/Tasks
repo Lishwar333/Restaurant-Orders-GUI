@@ -1,8 +1,4 @@
 Next works:
 
-- Payment button in front of back button
-- pay button click goes to payment panel 
-- Finish the payment panel layout with prepared sketch
-- (Border layout, west with panel of jlist and label) center woth radio btns for patment mode, pay btn
 - pay btn gives a progress bar, after done, payment done window
 - Then extra featured based on revision contents

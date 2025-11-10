@@ -14,6 +14,7 @@ public class MainPanel extends JPanel {
 	ErrorPanel errorPanel;
 	PaymentPanel paymentPanel;
 	JConstants jConstants = new JConstants(); // one shared instance
+	ThankYouPanel thankYouPanel;
 	
 	
 	public MainPanel(CardLayout cards) {
@@ -22,6 +23,7 @@ public class MainPanel extends JPanel {
 		orderPanel = new OrderPanel(this, cards, jConstants);
 		errorPanel = new ErrorPanel();
 		paymentPanel = new PaymentPanel(this, cards, jConstants);
+		thankYouPanel = new ThankYouPanel(this, cards);
 		
 		this.setLayout(cards);
 		this.setBackground(Color.yellow);
@@ -29,6 +31,7 @@ public class MainPanel extends JPanel {
 		this.add(orderPanel, "Orders");
 		this.add(errorPanel, "Error");
 		this.add(paymentPanel, "Payment");
+		this.add(thankYouPanel, "ThankYou");
 		
 		
 	}

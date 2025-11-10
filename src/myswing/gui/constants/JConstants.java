@@ -22,7 +22,16 @@ public class JConstants {
 		    + "</div></html>";
 	String PAYMENT_TITLE = "You are in Payment Page!";
 	Map<String, Boolean> orderList;
+	String THANK_YOU_PAGE_TITLE = "<html><div style='text-align:center;'>Thanks for your order!<br>Have a nice day!</div></html>";
 	
+
+	public String getTHANK_YOU_PAGE_TITLE() {
+		return THANK_YOU_PAGE_TITLE;
+	}
+
+	public void setTHANK_YOU_PAGE_TITLE(String tHANK_YOU_PAGE_TITLE) {
+		THANK_YOU_PAGE_TITLE = tHANK_YOU_PAGE_TITLE;
+	}
 
 	public Map<String, Boolean> getOrderList() {
 		return orderList;
