@@ -28,16 +28,17 @@ public class HomePanel extends JPanel{
 	OrderButton btn;
 	MyNameTextField myNameTF = new MyNameTextField();
 	JPanel homeCenterPanel;
-	JConstants jConstants = new JConstants();
+	JConstants jConstants;
 	ErrorLabel errorLabel = new ErrorLabel();
 	MainPanel mainPanel;
 	CardLayout cards;
 	ErrorPanel errorPanel = new ErrorPanel();
 	
-	public HomePanel(MainPanel mainPanel, CardLayout cards) {
+	public HomePanel(MainPanel mainPanel, CardLayout cards, JConstants jConstants) {
 		
 		this.mainPanel = mainPanel;
 		this.cards = cards;
+		this.jConstants = jConstants;
 		
 		homeTitleLabel = new TitleLabel();
 		homeTitleLabel.setText(jConstants.getHOME_WELCOME_LABEL());

@@ -1,5 +1,6 @@
 package myswing.gui.labels;
 
+import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
@@ -7,6 +8,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 import myswing.gui.constants.JImages;
+import myswing.gui.panels.MainPanel;
 
 public class TitleLabel extends JLabel {
 	
